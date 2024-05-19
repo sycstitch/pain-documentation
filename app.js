@@ -1,13 +1,17 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const port = process.env.PORT ?? 3000;
 
-app.use(express.static('public'))
+// Middleware
+app.use(express.json());
 
-app.get('*', (req, res) => {
-    res.redirect('/');
-})
+// Routes
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
-app.listen(port, () => {
-    console.log(`App listening on port ${port}`);
-})
+app.get("/api/data", (req, res) => {
+  // Fetch data from MongoDB
+  res.json({ message: "Data fetched successfully" });
+});
+
+module.exports = app;
