@@ -20,3 +20,5 @@ mongoose
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+// mongodb+srv://capitalbeats:rPrSvx9z7qbqnkiJ@paindocumentation.xpktlaa.mongodb.net/?retryWrites=true&w=majority&appName=PainDocumentation
